@@ -1,0 +1,265 @@
+:root {
+	--clr-blue-600: 217, 19%, 35%;
+	--clr-blue-500: 214, 17%, 51%;
+	--clr-blue-400: 212, 23%, 69%;
+	--clr-blue-300: 210, 46%, 95%;
+
+	--ff-manrope: 'Manrope', sans-serif;
+}
+
+/** BASE STYLES
+----------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: var(--ff-manrope);
+	font-size: 0.813rem;
+	color: hsl(var(--clr-blue-500));
+	background-image: linear-gradient(to bottom, hsl(var(--clr-blue-300), 0.5), hsl(var(--clr-blue-300), 1));
+	line-height: 1.5;
+	overflow: hidden;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+p + p {
+	margin-top: 1rem;
+}
+
+ul {
+	list-style: none;
+}
+
+button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font: inherit
+}
+
+/** UTILS
+----------------------------------------------------------------------------- */
+.show {
+	visibility: visible;
+	opacity: 1;
+}
+
+.hide {
+	visibility: hidden;
+	opacity: 0;
+}
+
+/** BUILDING-BLOCKS
+----------------------------------------------------------------------------- */
+ .emp {
+	 font-weight: 700;
+	 font-size: 1.125rem;
+	 line-height: 1.4;
+	 color: hsl(var(--clr-blue-600));
+ }
+
+ .bold {
+	 font-weight: 700;
+ }
+
+ .dark {
+	 color: hsl(var(--clr-blue-600));
+ }
+
+ .sub-text {
+	 display: block;
+	 margin-top: 0.125rem;
+	 font-size: 0.813rem;
+	 font-weight: 400;
+	 color: hsl(var(--clr-blue-400));
+ }
+
+.share-btn {
+	display: flex;
+	align-items: center;
+	position: relative;
+	z-index: 2;
+	aspect-ratio: 1;
+	padding: 0.5rem;
+	border-radius: 50%;
+	background-color: hsl(var(--clr-blue-300));
+	cursor: pointer;
+	transition: all 300ms ease-in;
+}
+
+.share-btn--active {
+	background-color: hsl(var(--clr-blue-500));
+}
+
+.share-btn--active .share-btn__svg path {
+	fill: #fff;
+}
+
+/** BLOCKS
+----------------------------------------------------------------------------- */
+.container {
+	padding: 3rem 1.5rem;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+	width: 100%;
+	max-width: 30rem;
+	background-color: #fff;
+	border-radius: 0.5rem;
+	box-shadow: 0 8px 8px 2px hsl(var(--clr-blue-500), 0.1);
+	overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+	.card {
+		flex-direction: row;
+		gap: 0;
+		max-width: 45.75rem;
+		overflow: visible;
+		box-shadow: 0 16px 32px 8px hsl(var(--clr-blue-500), 0.2);
+	}
+}
+
+/** CARD MEDIA
+------------------------------------------------------------ */
+.card__media {
+	border-radius: 0.5rem 0.5rem 0 0;
+	overflow: hidden;
+}
+
+.card__content {
+	position: relative;
+}
+
+.card__txt {
+	padding: 0 2rem;
+}
+
+.card__action {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 2rem;
+	padding: 0 2rem 1.25rem 2rem;
+}
+
+.author {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.author__pic {
+	max-width: 2.5rem;
+	border-radius: 50%;
+}
+
+.card__share {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.card__action-share {
+	display: flex;
+	gap: 1rem;
+	padding: 2rem 2rem 2rem 2rem;
+	background-color: hsl(var(--clr-blue-600));
+	border-radius: 0 0 0.5rem 0.5rem;
+	box-shadow: 0 4px 6px 1px hsl(var(--clr-blue-500), 0.3);
+}
+
+.card__action-share li:first-child {
+	text-transform: uppercase;
+	color: hsl(var(--clr-blue-400));
+	letter-spacing: 0.25rem;
+}
+
+/** ATTRIBUTION
+------------------------------------------------------------ */
+.attribution {
+	margin-top: 2rem;
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+@media screen and (min-width: 768px) {
+	.card__media {
+		border-radius: 0.5rem 0 0 0.5rem;
+		overflow: hidden;
+	}
+
+	.card__media img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.card__txt {
+		padding: 2.25rem 2.5rem 0 2.5rem;
+	}
+
+	.card__action {
+		margin-top: 1.5rem;
+		padding: 0 2.5rem 2rem 2.5rem;
+	}
+
+	.card__share {
+		position: absolute;
+		bottom: 6.275rem;
+		left: 60.5%;
+		max-width: 248px;
+	}
+
+	.card__action-share {
+		position: relative;
+		padding: 1.125rem 2.5rem 1.125rem 2.5rem;
+		border-radius: 0.5rem;
+	}
+
+	.card__action-share::after {
+		content: "";
+		position: absolute;
+		bottom: -12px;
+		left: 0;
+		right: 0;
+		margin-inline: auto;
+		width: 0;
+		height: 0;
+		border-left: 12px solid transparent;
+		border-right: 12px solid transparent;
+		border-top: 12px solid hsl(var(--clr-blue-600));
+	}
+}
